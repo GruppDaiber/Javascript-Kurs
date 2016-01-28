@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head> 
+	  <meta charset="utf-8"> 
+	  <title>Statements</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/zentrale.css" rel="stylesheet" media="all">
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv-printshiv.js" media="all">
+			</script>
+		<![endif]--> 
+		<meta name="description" content="Javaskript-Kurs"> 
+	</head>
+	<body>
+		<header role="banner">
+			<h1>
+				<abbr title="HyperText Markup Language 5">Javaskript:</abbr> 
+				<small>Statements</small>
+			</h1>
+		</header>		
+		<div class="wrap">	
+			<main role="main">
+				<section>
+					<h2>Statement</h2>
+					Das Statement <strong>document.getElementById("demo").innerHTML = "Hallo Dolly!";</strong>
+					schreibt den <strong>String</strong> "Hello Dolly" in das Element mit der id="demo".
+					<p>Ergebnis: <span id="demo"><span></p>
+					<script>
+							document.getElementById('demo').innerHTML = "Hallo Dolly!";
+					</script>
+					<hr />
+				</section>
+				<section>
+				    <h2>Reihenfolge der Statements</h2>
+					<strong>Die Anweisungen werden Zeile für Zeile
+					nacheinander ausgeführt</strong>. Und zwar in der selben
+					Reihenfolge, wie sie geschrieben wurden.
+					<pre class="sourcecode">
+						<code> 				
+&lt;p&gt;Ergebnis: &lt;span id="ausgabe">&lt;span>&lt;/p&gt;
+&lt;script&gt;
+	var x=42; var y=13; var z=x+y;
+	document.getElementById('ausgabe').innerHTML = z;
+&lt;/script&gt;	
+						</code>
+					</pre>	
+					<p>Ergebnis: <span id="ausgabe"></span></p>
+					<script>
+						var x=42; var y=13; var z=x+y;
+						document.getElementById('ausgabe').innerHTML = z;
+					</script>
+					In diesem Beispiel sind x, y und z <strong>Variablen</strong>. Mit der Variablen z
+					wird das Ergebnis von x+y=42+13=55 ausgegeben.
+					<p></p>
+					<h2>Variationen des Quellcodes:</h2>
+					<pre class="sourcecode">					
+						<code> 				
+var x=42;  /* Das ist eine Variable*/
+var y=13;  /* Blockkommentar*/
+var z=x+y; // Zeilenkommentar
+document.getElementById('ausgabe').innerHTML = z;		
+						</code>	
+						<code> 				
+var x=42;  /* Das ist eine Variable*/
+var y=13;  /* Blockkommentar*/
+var z=x+y; // Zeilenkommentar
+// Wenn der Platz nicht reicht, darf umbrochen werden.
+// Es ist üblich, nicht mehr als 80 Zeichen pro Programmierzeile
+// zu verwenden.
+// TIPP: Umbrechen Sie nach dem Operator "="
+document.getElementById('ausgabe').innerHTML = 
+z;		
+						</code>
+						<code> 				
+var x=42;    /* Ohne Whitespaces*/
+var x = 42;  /* Mit Whitespaces: besser lesbar!*/
+// Javaskript erlaubt Whitespaces (=Leerzeichen) im Quellcode.
+						</code>							
+					</pre>					
+					<hr />
+				</section>
+				<section>
+					<h2>Code-Block</h2>
+					Beliebig viele Anweisungen lassen sich mit Schlüsselwort
+					"function" innerhalb von geschweiften Klammern zu einer Anweisung
+					zusammenfassen.
+				    <p>Beispiel: Wenn Sie den Button anklicken, dann ändert sich der Inhalt:
+					</p>
+				    <p><span id="first"></span><span id="second">13</span>
+					</p>					
+					<p>
+						<button type="button" onclick="meineFunktion()">Versuch mal!</button>
+					</p>
+					<script>
+					function meineFunktion() {
+						document.getElementById("first").innerHTML = "4";
+						document.getElementById("second").innerHTML = "2";
+					}
+					</script>
+					<pre class="sourcecode">					
+						<code> 				
+&lt;p&gt;&lt;span id="first"&gt;&lt;/span&gt;&lt;span id="second"&gt;13&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;button type="button" onclick="meineFunktion()"&gt;
+   Versuch mal!
+   &lt;/button&gt;
+&lt;/p&gt;
+function meineFunktion() {
+	document.getElementById("first").innerHTML = "4";
+	document.getElementById("second").innerHTML = "2";
+}	
+						</code>	
+						<hr />
+				</section>
+				<section>
+					<h2>Schlüsselwörter</h2>
+					<p>
+						Anweisungen in JavaScript starten oft mit Schlüsselwörtern.
+						Hier eine kleine Liste von wichtigen Schlüsselwörtern:
+					</p>
+					<table>
+						<tr>
+							<td><strong>break</strong></td>
+							<td>Beendet eine Schleife oder switch-Anweisung</td>
+						</tr>
+						<tr>
+							<td><strong>continue</strong></td>
+							<td>Springt aus einer Schleife und startet ganz oben</td>
+						</tr>
+						<tr>
+							<td><strong>debugger</strong></td>
+							<td>Beendet eine Ausführung in Javaskript und startet die Debugging-Funktion
+							(wenn vorhanden!)
+							</td>
+						</tr>
+						<tr>
+							<td><strong>do ... while</strong></td>
+							<td>Schleife: Tue etwas, solange bis ...</td>
+						</tr>
+						<tr>
+							<td><strong>for</strong></td>
+							<td>Schleife: Tue etwas, von ... bis</td>
+						</tr>
+						<tr>
+							<td><strong>function</strong></td>
+							<td>Deklariert eine Funktion</td>
+						</tr>
+						<tr>
+							<td><strong>if ... else</strong></td>
+							<td>Wenn-Dann-Bedingung für zwei Anweisungen</td>
+						</tr>
+						<tr>
+							<td><strong>return</strong></td>
+							<td>Beendet eine Funktion mit einer Ausgabe</td>
+						</tr>
+						<tr>
+							<td><strong>switch</strong></td>
+							<td>Case-Bedingung für beliebig viele Anweisungen</td>
+						</tr>
+						<tr>
+							<td><strong>try ... catch</strong></td>
+							<td>Fehlerbehandlung</td>
+						</tr>
+						<tr>
+							<td><strong>var</strong></td>
+							<td>Deklariert eine Variable</td>
+						</tr>
+					</table>
+				</section>
+			</main>
+			<aside role="complementary">
+				<section>
+					<ul>
+						<li>Am Ende einer Anweisung (=Statement) steht immer ein <strong>Semikolon ;</strong></li>
+						<li>Anweisungen werden <strong>nacheinander</strong> ausgeführt.</li>
+						<li><strong>Kommentare</strong> (/* ... */ oder // ...) sind notwendig!</li>
+						<li><strong>Kommentare</strong> können auch zum Debuggen genutzt werden,
+						    indem Code-Zeilen oder Code-Blöcke auskommentiert werden.
+						</li>
+						<li>Der <strong>Zuweisungsoperator = </strong> bewegt Werte (z.B. einer Variablen)
+							von rechts nach links in einer Anweisung.
+						</li>
+						<li><strong>Linienlänge and Linienumbruch</strong>: 
+						    Es ist üblich, nicht mehr als 80 Zeichen pro Programmierzeile
+							zu verwenden.
+						    Wenn der Platz nicht reicht, darf umbrochen werden.
+							TIPP: Umbrechen Sie nach dem Operator "="
+						</li>
+						<li>Javaskript erlaubt <strong>Whitespaces (=Leerzeichen)</strong> im Quellcode, da
+						    diese von Javaskript ignoriert werden.
+						    Dadurch wird der Quellcode besser lesbar. Das ist aber
+							Geschmacksache!
+						</li>
+						<li>
+							<strong>Beliebig viele Anweisungen</strong> lassen sich mit Schlüsselwort
+					        <strong> function</strong> innerhalb von geschweiften Klammern zu <strong>
+							einer Anweisung</strong> zusammenfassen.
+						</li>
+					</ul>
+				</section>
+				<section>
+				</section>
+			</aside>
+		</div>
+		<footer role="contentinfo">
+			<small>Copyright &copy; GME1501-S: <time datetime="2016">10.01.2016</time></small>
+		</footer>
+	</body>
+</html>
+

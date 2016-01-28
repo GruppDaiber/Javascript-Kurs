@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>if, if-else</title>
+	</head>	
+	<body>
+		<h2>Berechnung einer beliebigen Quadratischen Gleichung 0=ax^2+bx+c</h2>
+		<script type="text/javascript">
+			function quad_anzahl_loes(a,b,c) {
+				var diskriminante = (b*b)-(4*a*c);
+				//Normieren auf +-1, wenn nicht 0
+				if (diskriminante != 0) {
+					// Beispiel -1= -8/8;
+					diskriminante = diskriminante/Math.abs(diskriminante); 
+				}
+				//-1: keine Lösung
+				// 0: eine Lösung
+				// 1: zwei Lösungen
+				return diskriminante; 
+			};
+			function berechne_quad_term (){
+				var a = parseFloat(document.Formular.Eingabe_a.value);
+				var b = parseFloat(document.Formular.Eingabe_b.value);
+				var c = parseFloat(document.Formular.Eingabe_c.value);
+				var loesungen=new Array("","","");
+				var symmetrie_wert=-1*(b)/(2*a);
+				var wurzel_bruch=Math.sqrt((b*b)-(4*a*c))/(2*a);
+				switch (quad_anzahl_loes(a,b,c)) {
+				  case 0: //Eine Lösung
+				    loesungen[0]="eine Lösung: ";
+				    loesungen[1]=symmetrie_wert;
+					loesungen[2]="";
+					break;
+				  case -1: //Keine Lösung
+				    loesungen[0]="keine Lösung:";
+					loesungen[1]="NaN";
+					loesungen[2]="NaN";
+					break;
+				  case 1: //Zwei Lösungen
+				    loesungen[0]="zwei Lösungen: ";
+					loesungen[1]=symmetrie_wert-wurzel_bruch;
+					loesungen[2]=symmetrie_wert+wurzel_bruch;				  
+					break;
+				  default:
+					loesungen[0]="Eingaben für a,b,und c fehlen!";
+					loesungen[1]="NaN";
+					loesungen[2]="NaN";
+					break;
+				}
+				document.getElementById("Legende").innerHTML =
+				"Der Gleichungsterm 0 = ("+a+")*x^2 + ("+b+")*x + ("+c+") hat";
+				document.getElementById("demo_L").innerHTML =
+								loesungen[0];
+				document.getElementById("demo_1").innerHTML =
+								"x1= " + loesungen[1];
+				document.getElementById("demo_2").innerHTML =
+								"x2= " + loesungen[2];
+			};
+			function eingaben_zuruecksetzen(){
+				for(var i=0;i<3;i++){
+					document.getElementsByName('Formular')[i].reset();
+				}
+			}
+		</script>
+		<form name="Formular" action="">
+			<p>
+				Eingabe für den Koeffizienten <strong>a</strong>: 
+				<input type="text" name="Eingabe_a" size="3">
+			</p>
+			<p>
+				Eingabe für den Koeffizienten <strong>b</strong>: 
+				<input type="text" name="Eingabe_b" size="3">
+			</p>
+			<p>	
+				Eingabe für den Koeffizienten <strong>c</strong>: 
+				<input type="text" name="Eingabe_c" size="3"><br />
+			</p>
+			<p>	
+				<input type="button" 
+					value="Quadratischen Term berechnen" 
+					onclick="berechne_quad_term()"
+				>
+				<input type="button" 
+					value="Eingaben zurücksetzen" 
+					onclick="eingaben_zuruecksetzen()"
+				>
+			</p>	
+		</form>
+		<p><span id="Legende"></span></p>
+		<p><span id="demo_L"></span></p>
+		<p><span id="demo_1"></span></p>
+		<p><span id="demo_2"></span></p>
+	</body>
+</html>

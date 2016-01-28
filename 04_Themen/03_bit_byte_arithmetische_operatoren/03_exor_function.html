@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Logik-Operatoren und Funktion</title>
+	</head>
+	<body>
+		<h2>EXOR-Schaltung mit logischen Operatoren</h2>
+		<p>Das Exklusive ODER ergibt folgende Wahrheitstabelle:</p>
+		<p><strong><span id="demo_1"></span></strong><p>
+		<p><strong><span id="demo_2"></span></strong><p>
+		<p><strong><span id="demo_3"></span></strong><p>
+		<p><strong><span id="demo_4"></span></strong><p>
+		<p>Das negierte Exklusive ODER ergibt folgende Wahrheitstabelle:</p>
+		<p><strong><span id="demo_5"></span></strong><p>
+		<p><strong><span id="demo_6"></span></strong><p>
+		<p><strong><span id="demo_7"></span></strong><p>
+		<p><strong><span id="demo_8"></span></strong><p>
+		
+		<script type="text/javascript">
+			function EXOR(a,b){
+				var ergebnis=(!a&&b)||(a&&!b);
+				return ergebnis;
+			}
+			function NOT_EXOR(a,b){
+				var ergebnis=(!a&&b)||(a&&!b);
+				return !ergebnis;
+				// oder return(a&&b)||(!a&&!b);
+			}
+			document.getElementById("demo_1").innerHTML = 
+			                "EXOR(false,false) ergibt " + EXOR(false,false);
+			document.getElementById("demo_2").innerHTML = 
+			                "EXOR(false,true) ergibt " + EXOR(false,true); 	
+			document.getElementById("demo_3").innerHTML = 
+			                "EXOR(true,false) ergibt " + EXOR(true,false); 	
+			document.getElementById("demo_4").innerHTML = 
+			                "EXOR(true,true) ergibt " + EXOR(true,true); 
+			
+			document.getElementById("demo_5").innerHTML = 
+			                "NOT_EXOR(false,false) ergibt " + NOT_EXOR(false,false);
+			document.getElementById("demo_6").innerHTML = 
+			                "NOT_EXOR(false,true) ergibt " + NOT_EXOR(false,true); 	
+			document.getElementById("demo_7").innerHTML = 
+			                "NOT_EXOR(true,false) ergibt " + NOT_EXOR(true,false); 	
+			document.getElementById("demo_8").innerHTML = 
+			                "NOT_EXOR(true,true) ergibt " + NOT_EXOR(true,true); 							
+		</script>
+	</body>
+</html>	

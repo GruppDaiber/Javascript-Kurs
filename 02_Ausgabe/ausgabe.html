@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head> 
+	  <meta charset="utf-8"> 
+	  <title>Ausgabemöglichkeiten</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/zentrale.css" rel="stylesheet" media="all">
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv-printshiv.js" media="all">
+			</script>
+		<![endif]--> 
+		<meta name="description" content="Javaskript-Kurs"> 
+	</head>
+	<body>
+		<header role="banner">
+			<h1>
+				<abbr title="HyperText Markup Language 5">Javaskript:</abbr> 
+				<small>Ausgabemöglichkeiten</small>
+			</h1>
+		</header>		
+		<div class="wrap">	
+			<main role="main">
+				<section>
+					<h2>1. Der Quellcode für die Alert-Box:</h2>
+					<pre class="sourcecode">
+						<code> 				
+&lt;script&gt;window.alert(5 + 6);&lt;/script&gt;		
+						</code>				
+					</pre>
+					<h2>Die Erklärung dazu:</h2>
+					Das &lt;script&gt;-Tag erlaubt überall im Dokument, Quellcode
+					anzulegen. Die Anweisung <strong>window.alert(5 + 6);</strong> öffnet ein Fenster
+					mit dem Ergebnis der Rechenoperation 5+6.
+					<script>
+							window.alert(5 + 6);
+					</script>					
+					<hr />
+				</section>
+				<section>
+					<h2>2. Der Quellcode für document.write():</h2>
+					<script>
+							document.write(5 + 6);
+					</script>
+					<pre class="sourcecode">
+						<code> 				
+&lt;script&gt;document.write(5 + 6);&lt;/script&gt;		
+						</code>				
+					</pre>
+					<h2>Die Erklärung dazu:</h2>
+					Das &lt;script&gt;-Tag erlaubt überall im Dokument, Quellcode
+					anzulegen. Die Anweisung <strong>document.write(5 + 6);</strong> schreibt das Ergebnis der
+					Rechenoperation	die Stelle, wo die Anweisung aufgerufen wurde.
+					<hr />
+				</section>
+				<section>
+					<h2>3. Button mit document.write():</h2>
+					<button onclick="document.write(5 + 6);">5 + 6 = ?</button>
+					<pre class="sourcecode">
+						<code> 
+&lt;button onclick="document.write(5 + 6);"&gt;5 + 6 = ?&lt;/button&gt;							
+						</code>				
+					</pre>
+					<h2>Die Erklärung dazu:</h2>
+					Die Anweisung <strong>document.write(5 + 6);</strong> über einen Button mit dem 
+					Click-Ereignis onclick überschreibt den Viewport mit dem Ergebnis.
+					Also: Nicht ganz praktisch!
+					<hr />
+				</section>
+				<section>
+					<h2>4. document.getElementById().innerHTML:</h2>
+					5 + 6 = <span id="ergebnis"></span>
+					<script>document.getElementById("ergebnis").innerHTML = 5 + 6;</script>
+					<pre class="sourcecode">
+						<code> 
+&lt;p id="ergebnis"&gt;&lt;/p&gt;	
+&lt;script&gt;
+   document.getElementById("ergebnis").innerHTML = 5+6;
+&lt;/script&gt;							
+						</code>				
+					</pre>
+					<h2>Die Erklärung dazu:</h2>
+					Die Anweisung document.getElementById("ergebnis").innerHTML=5+6;
+				    schreibt das Ergebnis innerhalb des p-Tags mit der id=ergebnis.
+					Das ist praktisch!
+					<hr />
+				</section>
+				<section>
+					<h2>5. Button mit document.getElementById().innerHTML:</h2>
+				    <button 
+						type="button" 
+						onclick="document.getElementById('anzeige').innerHTML = 5 + 6">
+						Was ergibt 5 + 6?
+					</button>
+					<p id="anzeige"></p>
+					<pre class="sourcecode">
+						<code> 
+&lt;button 
+	type="button" 
+	onclick="document.getElementById('anzeige').innerHTML = 5 + 6"&gt;
+	Was ergibt 5 + 6?
+&lt;/button&gt;					
+						</code>				
+					</pre>
+					<h2>Die Erklärung dazu:</h2>
+					Die Anweisung <strong>document.getElementById("anzeige").innerHTML=5+6;</strong>
+					gekoppelt mit einem Schalter schreibt das Ergebnis innerhalb 
+					des p-Tags mit der id="anzeige"". Das ist praktisch!
+					<hr />
+				</section>
+				<section>
+					<!--
+					<h2>6. console.log():</h2>
+					Achtung: Aktivieren Sie "Debugging" mit F12 und wählen Sie "Console"
+					im Debugger-Menü.
+					<script>console.log = 5 + 6;</script>
+					<pre class="sourcecode">
+						<code> 
+&lt;script&gt;console.log = 5 + 6;&lt;/script&gt;					
+						</code>				
+					</pre>
+					<h2>Die Erklärung dazu:</h2>
+					Das Ergebnis wird in der Console des Browsers gemeldet.
+					<hr />
+					-->
+				</section>							
+			</main>
+			<aside role="complementary">
+				<section>
+				</section>
+				<section>
+				</section>
+			</aside>
+		</div>
+		<footer role="contentinfo">
+			<small>Copyright &copy; GME1501-S: <time datetime="2016">10.01.2016</time></small>
+		</footer>
+	</body>
+</html>
+

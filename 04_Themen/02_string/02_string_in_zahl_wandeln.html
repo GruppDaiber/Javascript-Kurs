@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>String-Operatoren</title>
+	</head>
+	<body>
+		<h1>Typ-Umwandlung: Vom String zur Zahl</h1>
+		<p>"3.14" in 3.14 über parseFloat(): <span><strong id="ausgabe_1"></strong></span></p>
+		<p>"3.14" in 3 über parseInt(): 	 <span><strong id="ausgabe_2"></strong></span></p>
+		<p>Test über Addition: 				 <span><strong id="ausgabe_3"></strong></span></p>
+		<script type="text/javascript">
+			var ziffern="3.14";
+			var zahl=0;
+			/*_____________Ziffernfolge in Float wandeln_______*/
+			zahl=parseFloat(ziffern);
+			document.getElementById("ausgabe_1").innerHTML = zahl;
+			
+			/*_____________Ziffernfolge in Integer wandeln____*/
+			zahl=parseInt(ziffern);
+			document.getElementById("ausgabe_2").innerHTML = zahl;
+			/*_____________Test, ob wirklich Zahl____*/
+			document.getElementById("ausgabe_3").innerHTML = zahl+zahl;
+		</script>
+	</body>
+</html>	
+		

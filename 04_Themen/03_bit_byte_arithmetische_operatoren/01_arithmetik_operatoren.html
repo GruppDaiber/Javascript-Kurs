@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Operatoren</title>
+	</head>
+	<body>
+		<span id="ergebnis"></span>
+		<script type="text/javascript">
+			var eingang_1;
+			var eingang_2;
+			var ausgang;
+			/*_____________Arithmetik_______*/
+			//Modulo
+			//13:5=2.6 -> 2 + 0.6*5 -> 2 Rest 3
+			/*
+			eingang_1 = 13; eingang_2 = 5;
+			ausgang = eingang_1 % eingang_2;
+			document.getElementById("ergebnis").innerHTML =ausgang;
+			*/
+			/*___________INC-DEC____________*/
+			
+			var dec_1 = 1; var inc_1 = 1;
+			dec_1--;  //Dekrement: Inhalt der Variablen im 1 erniedrigen 
+					  // entspricht: dec_1 = dec_1 - 1;
+			inc_1++;    //Inkrement: Inhalt der Variablen im 1 erhöhen 
+			document.getElementById("ergebnis").innerHTML =inc_1;
+			/*_____________Vergleiche_______*/
+			//Vergleich und strikter Vergleich
+			/*
+			eingang_1 = 0; eingang_2 = 1;
+			ausgang = eingang_1 == eingang_2;
+			ausgang = eingang_1 === eingang_2;
+			ausgang = eingang_1 < eingang_2;
+			document.getElementById("ergebnis").innerHTML = ausgang;
+			*/
+			//Toggeln über Negation
+			/*
+			eingang_1 = true;
+			eingang_1 = !eingang_1;
+			ausgang = !eingang_1;
+			document.getElementById("ergebnis").innerHTML = ausgang;
+			*/
+			/*_____________Exor-Glied_________________*/
+			// && Logische UND
+			// || Logische ODER
+			//  ! NOT
+			var A=true; var B=true;
+			var exor;
+			exor=(!A&&B)||(A&&!B);
+			document.getElementById("ergebnis").innerHTML = exor;
+
+
+
+
+
+
+
+			
+			
+			/*______________Abfragen_________*/
+			//eingang_1 = true; eingang_2 = true;
+			//eingang_1 = 1; eingang_2 = true;
+			//eingang_1 = "Otto"; eingang_2 = "Maria";
+			//eingang_1 = 42; eingang_2 = 4711;
+			/*_______________________________*/
+			//ausgang=eingang_1==eingang_2;
+			/*_______________________________*/
+			
+		</script>
+	</body>
+</html>	
+		

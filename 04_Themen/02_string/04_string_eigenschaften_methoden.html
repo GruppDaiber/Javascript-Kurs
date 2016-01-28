@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>String-Objekt</title>
+	</head>
+	<body>
+		<h2>String Eigenschaften</h2>
+		<table>
+		  <tr>
+			<th style="width:200px">Eigenschaften</th>
+			<th style="width:200px">Beschreibung</th>
+			<th style="width:300px">Ausgabe</th>
+		  </tr>
+		  <tr>
+			<td><strong>constructor</strong></td>
+			<td>Gibt die Construktorfunktion des Strings aus</td>
+			<td><strong><span id="demo_01"></span></strong>
+				<script type="text/javascript">
+					var str = "Hello World!";
+					document.getElementById("demo_01").innerHTML = str.constructor;
+				</script>
+			</td>
+		  </tr>
+		  <tr>
+			<td><strong>length</strong></td>
+			<td>Gibt die Länge des Strings aus</td>
+			<td><strong><span id="demo_02"></span></strong>
+				<script type="text/javascript">
+					str = "GUGU GAGA GIGI fskjjsddfkjsdhfkljjahsdf ";
+					document.getElementById("demo_02").innerHTML = str.length;
+				</script>
+			</td>
+		  </tr>
+		  <tr>
+			<td><strong>prototype</strong></td>
+			<td>Erlaubt Eigenschaften und Methoden einem Objekt hinzuzufügen</td>
+			<td><strong><span id="demo_03"></span></strong>
+				<script type="text/javascript">
+					function employee(name, jobtitle, born) {
+						this.name=name;
+						this.jobtitle=jobtitle;
+						this.born=born;
+					}
+					employee.prototype.salary = 2000; //Hinzufügen einer Eigenschaft
+					employee.prototype.weight = 100;  //Hinzufügen einer Eigenschaft
+
+					var fred = new employee("Fred Flintstone", "Caveman", 1970);
+					var guggu = new employee("Herr Kaputnik", "Doktor", 1898);
+					var donald_duck = new employee("Donald Duck", "Onkel", 1934); 
+					guggu.born*=4; //guggu.born=guggu.born*4;
+					guggu.jobtitle="Raumfahrer";
+					document.getElementById("demo_03").innerHTML = donald_duck.jobtitle;
+				</script>
+			</td>
+		  </tr>
+		</table>
+
+
+		<h2>String Methoden</h2>
+		<table>
+		  <tr>
+			<th style="width:200px">Methoden</th>
+			<th style="width:200px">Beschreibung</th>
+			<th style="width:300px">Ausgabe</th>
+		  </tr>
+		  <tr>
+			<td><strong>charAt()</strong></td>
+			<td>Gibt durch den spezifizierten Index das 
+			    entsprechende Zeichen aus</td>
+			<td><strong><span id="demo_04"></span></strong>
+				<script type="text/javascript">
+					str = "HELLO WORLD";
+					document.getElementById("demo_04").innerHTML = str.charAt(0);
+				</script>
+			</td>			
+		  </tr>
+		  <tr>
+			<td><strong>charCodeAt()</strong></td>
+			<td>Gibt den Unicode des - durch den Index 
+			    spezifizierten Zeichen - aus</td>
+			<td>
+			    <strong><span id="demo_05"></span></strong>
+				<script type="text/javascript">
+					str = "HELLO WORLD";
+					document.getElementById("demo_05").innerHTML = str.charCodeAt(0);
+				</script>
+			</td>					
+		  </tr>
+		  <tr>
+			<td><strong>concat()</strong></td>
+			<td>Verbindet mehrere Strings zu einem String zusammen</td>
+			<td><strong><span id="demo_06"></span></strong>
+				<script type="text/javascript">
+					var str1 = "HELLO WORLD"; var str2=", OLE!";
+					document.getElementById("demo_06").innerHTML = str1.concat(str2);
+				</script>
+			</td>						
+		  </tr>
+		  <tr>
+			<td><strong>fromCharCode()</strong></td>
+			<td>Konvertiert Unicode-Zahlen zu den entsprechenden Zeichen</td>
+			<td><strong><span id="demo_07"></span></strong>
+				<script type="text/javascript">
+				    // Zeichen "A" -> 65, String ist das "String"-Objekt 
+					var ausgabe = String.fromCharCode(33+Math.round(Math.random()*65502));
+					document.getElementById("demo_07").innerHTML = ausgabe;
+				</script>
+			</td>
+		  </tr>
+		  <tr>
+			<td><strong>indexOf()</strong></td>
+			<td>Gibt den Index des im String spezifizierten Zeichens/String aus</td>
+			<td><strong><span id="demo_08"></span></strong>
+				<script type="text/javascript">
+				    str = "Hallo Welt, willkommen im Universum!";
+					document.getElementById("demo_08").innerHTML = str.indexOf("Z");
+				</script>
+			</td>				
+		  </tr>
+		  <tr>
+			<td><strong>lastIndexOf()</strong></td>
+			<td>Gibt den Index des im String zuletzt spezifizierten Zeichens/String aus</td>
+			<td><strong><span id="demo_09"></span></strong>
+				<script type="text/javascript">
+							str = "Hallo Planet Erde, Du bist ein verrückter Planet!";
+							ausgabe = str.lastIndexOf("Planet");
+							document.getElementById("demo_09").innerHTML = ausgabe;
+				</script>
+			</td>				
+		  </tr>
+		  </tr>
+		  <tr>
+			<td><strong>localeCompare()</strong></td>
+			<td>Vergleicht zwei Strings alphabetisch miteinander:
+				<ul>
+				  <li>Ausgabe: -1 wenn str1 vor str2 kommt </li>
+				  <li>Ausgabe:  0 wenn beide Strings gleich sind</li> 
+				  <li>Ausgabe:  1 wenn str1 nach dem str2 kommt</li>
+				</ul>
+			</td>
+			<td><strong><span id="demo_10"></span></strong>
+				<script type="text/javascript">
+					str1 = "ab";
+					str2 = "cd";
+					ausgabe = str1.localeCompare(str2);
+					document.getElementById("demo_10").innerHTML = ausgabe;
+				</script>
+			</td>
+		  </tr>
+		  <tr>
+			<td><strong>match()</strong></td>
+			<td>Durchsucht einen String nach einer Zeichenkette und 
+			    listet alle Gefundenen auf:
+			</td>
+			<td><strong><span id="demo_11"></span></strong>
+				<script type="text/javascript">
+					str = "Dubi DUBIDI dudi di di da di di";
+					document.getElementById("demo_11").innerHTML = str.match(/di/g);
+				</script>
+			</td>			
+		  </tr>
+		  <tr>
+			<td><strong>replace()</strong></td>
+			<td>Durchsucht einen String nach einem spezifizierten 
+			    Wert und ersetzt ihn mit einer
+				Alternative.
+			</td>
+			<td><strong><span id="demo_12"></span></strong>
+				<script type="text/javascript">
+					str = "Besuche die Wiesn!";
+					ausgabe = str.replace("Wiesn", "SRH-Fachschule");
+					document.getElementById("demo_12").innerHTML = ausgabe;
+				</script>
+			</td>						
+		  </tr>
+		  <tr>
+			<td><strong>search()</strong></td>
+			<td>Durchsucht einen String nach einem spezifizierten Wert 
+				und gibt die Position des gefundenen Wertes aus.
+			</td>
+			<td><strong><span id="demo_13"></span></strong>
+				<script type="text/javascript">
+					str = "Besuche die Wiesn!";
+					ausgabe = str.search("Wiesn");
+					document.getElementById("demo_13").innerHTML = ausgabe;
+				</script>
+			</td>	
+		  </tr>
+		  <tr>
+			<td><strong>slice()</strong></td>
+			<td>Extrahiert einen Teil eines Strings und gibt den Rest wieder aus.</td>
+			<td><strong><span id="demo_14"></span></strong>
+				<script type="text/javascript">
+					str = "Besuche die Wiesn!";
+					ausgabe = str.slice(1,5);
+					document.getElementById("demo_14").innerHTML = ausgabe;
+				</script>
+			</td>	
+		  <tr>
+			<td><strong>split()</strong></td>
+			<td>Zerlegt einen String nach spezifizierten Merkmalen und 
+				erstellt einen Array aus den Fragmenten.
+			</td>
+			<td><strong><span id="demo_15"></span></strong>
+				<script type="text/javascript">
+					str = "Besuche die Wiesn!";
+					ausgabe = str.split(" ");
+					//document.getElementById("demo_15").innerHTML = ausgabe;
+					// Ausgabe: "Besuche","die","Wiesn!" 
+					document.getElementById("demo_15").innerHTML = ausgabe[0];
+					//Ausgabe: "Besuche"
+				</script>
+			</td>
+		  </tr>
+		  <tr>
+			<td><strong>substr()</strong></td>
+			<td>
+			Extrahiert eine spezifizierte Anzahl von Zeichen aus 
+			einem String von einer spez. Position aus. 
+			</td>
+			<td><strong><span id="demo_16"></span></strong>
+				<script type="text/javascript">
+					str = "Besuche die Wiesn!";
+					ausgabe = str.substr(1,4); //Position, Anzahl
+					document.getElementById("demo_16").innerHTML = ausgabe;
+				</script>
+			</td>			
+		  </tr>
+		  <tr>
+			<td><strong>substring()</strong></td>
+			<td>Extrahiert Zeichen aus einem String zwischen 
+			    zwei Positionen.
+			</td>
+			<td><strong><span id="demo_17"></span></strong>
+				<script type="text/javascript">
+					str = "Besuche die Wiesn!";
+					ausgabe = str.substring(1,4); //[Start .... [Ende
+					document.getElementById("demo_17").innerHTML = ausgabe;
+				</script>
+			</td>			
+		  </tr>
+		  <tr>
+			<td><strong>toLocaleLowerCase()</strong></td>
+			<td>Konvertiert einen String in Kleinbuchstaben 
+			   (Abhängig von Spracheinstellung des Browsers)</td>
+			<td><strong><span id="demo_18"></span></strong>
+				<script type="text/javascript">
+					str = "Besuche die Wiesn!";
+					ausgabe = str.toLocaleLowerCase(); 
+					document.getElementById("demo_18").innerHTML = ausgabe;
+				</script>
+			</td>					
+		  </tr>
+		  <tr>
+			<td><strong>toLocaleUpperCase()</strong></td>
+			<td>Konvertiert einen String in Großbuchstaben 
+			   (Abhängig von Spracheinstellung des Browsers)</td>
+			<td><strong><span id="demo_19"></span></strong>
+				<script type="text/javascript">
+					str = "Besuche die Wiesn!";
+					ausgabe = str.toLocaleUpperCase(); 
+					document.getElementById("demo_19").innerHTML = ausgabe;
+				</script>
+			</td>								
+		  </tr>
+		  <tr>
+			<td><strong>toLowerCase()</strong></td>
+			<td>Konvertiert einen String in Kleinbuchstaben</td>
+			<td><strong><span id="demo_20"></span></strong>
+				<script type="text/javascript">
+					str = "Der Goldene Schnitt beträgt 1.618";
+					ausgabe = str.toLowerCase(); 
+					document.getElementById("demo_20").innerHTML = ausgabe;
+				</script>
+			</td>	
+		  </tr>
+		  <tr>
+			<td><strong>toUpperCase()</strong></td>
+			<td>Konvertiert einen String in Großbuchstaben</td>
+			<td><strong><span id="demo_21"></span></strong>
+				<script type="text/javascript">
+					str = "Der Goldene Schnitt beträgt 1.618";
+					ausgabe = str.toUpperCase(); 
+					document.getElementById("demo_21").innerHTML = ausgabe;
+				</script>
+			</td>				
+		  </tr>
+		  <tr>
+			<td><strong>toString()</strong></td>
+			<td>Gibt den Wert eines String-Objekts zurück</td>
+			<td><strong><span id="demo_22"></span></strong>
+				<script type="text/javascript">
+					str = 25;//"Katzensaft ";
+					str += 25;
+					ausgabe = str.toString(); 
+					//ausgabe += str; //ausgabe = ausgabe + str;
+					document.getElementById("demo_22").innerHTML = ausgabe;
+				</script>
+			</td>						
+		  </tr>		  
+		  <tr>
+			<td><strong>trim()</strong></td>
+			<td>Entfernt am Anfang und Ende eines Strings die Whitespaces</td>
+			<td><strong><span id="demo_23"></span></strong>
+				<script type="text/javascript">
+					str = "     Katzensaft     ";
+					ausgabe = str.trim();
+					ausgabe ="|"+ausgabe+"|";
+					document.getElementById("demo_23").innerHTML = ausgabe;
+				</script>
+			</td>				
+		  </tr>
+		  <tr>
+			<td><strong>valueOf()</strong></td>
+			<td>Gibt den primitiven Wert eines String-Objekts zurück</td>
+			<td><strong><span id="demo_24"></span></strong>
+				<script type="text/javascript">
+					str = "34 mal Katzensaft";
+					ausgabe = str.valueOf(); 
+					document.getElementById("demo_24").innerHTML = ausgabe;
+				</script>
+			</td>					
+		  </tr>
+		  </table>
+	</body>
+</html>	
+		

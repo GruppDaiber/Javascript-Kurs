@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>if, if-else</title>
+	</head>	
+	<body>
+		<p>Betätige den Button, um den zeitgesteuerten Gruß zu empfangen!</p>
+		<button onclick="fkt_day_evening">Versuche es mal!</button>
+		<p id="demo"></p>
+		<script>
+			function fkt_day() {
+				var time = new Date().getHours();
+				if (time < 20) {
+					document.getElementById("demo").innerHTML = "Guten Tag";
+				}
+			}
+			function fkt_day_evening() {
+				var time = new Date().getHours();
+				if (time<16) {
+					document.getElementById("demo").innerHTML = "Arbeit, Sport und Spiel";
+				}else{
+					document.getElementById("demo").innerHTML = "Relaxen, geniessen, poofen";
+				}
+			}
+		</script>
+	</body>
+</html>

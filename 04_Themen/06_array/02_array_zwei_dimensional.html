@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Zweidimensionaler Array</title>
+		<style>
+			tr, td{border: 1px solid #212121;}
+			td {text-align: center;background-color: #aaeeff;}
+		</style>
+	</head>
+	<body>
+		<h2>Array: Zahlenpaare in einem zweidimensionalen Array</h2>
+		<ul>
+			<li>Der zweidimensionale Array besteht aus zwei Arrays, 
+			die in einem gemeinsamen Array eingelagert sind.
+			</li>		
+			<li>Der zweidimensionale Arrays speichern zum Beispiel Daten (x,y) für 
+			Kurvenplots von mathematischen Funktionen.
+			</li>
+			<li>Der zweidimensionale Arrays sind Datenkontainer für 
+			 Matrizen, die Werte flächig anhand der Angaben des Zeilen-
+			 und Spaltenindex darstellen.
+			</li>	
+		</ul>
+		<p>(1) Ein zweidimensionaler Array mit Defaultwerten:<br />  
+			<span id="Ausgabe_1"></span><br />
+		</p>
+		<p>(2) Auslesen des ersten Zahlenpaares (x|y): <br />
+			
+			(<span id="Ausgabe_2"></span>| 			
+			<span id="Ausgabe_3"></span>) = (x<sub>0</sub>|y<sub>0</sub>)			
+		</p>
+		<p>(3) Beschreiben des ersten Zahlenpaares (x|y): <br />
+			(<span id="Ausgabe_4"></span>| 			
+			<span id="Ausgabe_5"></span>) = (x<sub>0</sub>|y<sub>0</sub>)<br />
+			<span id="Ausgabe_6"></span>
+		</p>
+		<p>(4) Darstellung der Werte als Matrix: <br />
+			<table>
+				<tr>
+					<td></td><td> Spalte0 </td><td> Spalte1 </td>
+				</tr>
+				<tr>
+					<td>Zeile0</td><td><span id="Ausgabe_7"></span></td><td><span id="Ausgabe_8"></span></td>
+				</tr>	
+				<tr>
+					<td>Zeile1</td><td><span id="Ausgabe_9"></span></td><td><span id="Ausgabe_10"></span></td>
+				</tr>
+			</table>
+		</p>		
+		
+		<script type="text/javascript">
+			var zahlenpaare = new Array(); 		//Leeren Haupt-Array anlegen
+			var zahlen_x = new Array(1,2); 		//Anlegen eines Unter-Arrays mit X-Werten
+			var zahlen_y = new Array(-1,-2); 	//Anlegen eines Unter-Arrays mit X-Werten
+			//Beide Unter-Arrays als Elemente dem Hauptarray durch Zuweisung übergeben
+			zahlenpaare[0]=zahlen_x; // Array für X-Werte in Array Zahlenpaare
+			zahlenpaare[1]=zahlen_y; // Array für y-Werte in Array Zahlenpaare
+			
+			//Jetzt enthält Haupt-Array zahlenpaare zwei Unter-Arrays,
+			//die mit Zahlen gefüllt sind. Wird der Hauptarray im HTMLdokument geschrieben,
+			//dann sehen Sie in diesem Beispiel vier Zahlenwerte. Die ersten zwei stehen für 
+			//die Werte für X, die folgenden zwei Zahlen für die Y-Werte.
+			document.getElementById("Ausgabe_1").innerHTML = zahlenpaare;//(1)
+			
+			//Jetzt lesen wir Zahlenpärchen aus in der Form (x|y) (2)
+			document.getElementById("Ausgabe_2").innerHTML = zahlenpaare[0][0];//x0
+			document.getElementById("Ausgabe_3").innerHTML = zahlenpaare[1][0];//y0
+			
+			//Jetzt beschreiben wir das Zahlenpärchen in der Form (x|y) (3)
+			zahlenpaare[0][0]=42;	//x0 beschreiben
+			zahlenpaare[1][0]=4711;	//y0 beschreiben
+			
+			//Ausgeben des Zahlenpaares in der Form (x|y) (3)
+			document.getElementById("Ausgabe_4").innerHTML = zahlenpaare[0][0];//x0
+			document.getElementById("Ausgabe_5").innerHTML = zahlenpaare[1][0];//y0
+			document.getElementById("Ausgabe_6").innerHTML = zahlenpaare;//(3)
+			
+			//Ausgeben des Zahlenpaares in der Form (x|y) (4)
+			document.getElementById("Ausgabe_7").innerHTML = zahlenpaare[0][0];	//Zeile0, Spalte0
+			document.getElementById("Ausgabe_8").innerHTML = zahlenpaare[0][1];	//Zeile0, Spalte1
+			document.getElementById("Ausgabe_9").innerHTML = zahlenpaare[1][0];	//Zeile1, Spalte0
+			document.getElementById("Ausgabe_10").innerHTML = zahlenpaare[1][1];//Zeile1, Spalte1
+		</script>				
+	</body>
+</html>	
+		

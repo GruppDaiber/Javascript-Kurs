@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+		<title>Farben und Stile</title>
+	</head>
+	<body>
+		<canvas id="myCanvas1" width="100" height="100">
+			Ihr Browser ist total veraltet! 
+		</canvas>
+		<canvas id="myCanvas2" width="100" height="100">
+			Ihr Browser ist total veraltet! 
+		</canvas>
+		<script type="text/javascript">
+			
+			function draw_fill() {
+			    var paintobj = document.getElementById('myCanvas1').getContext('2d');
+				for (var i=0;i<6;i++){
+					for (var j=0;j<6;j++){
+						paintobj.fillStyle = 'rgb(' + Math.floor(255-42.5*i) + ',' +
+						Math.floor(255-42.5*j) + ',0)';
+						paintobj.fillRect(j*25,i*25,25,25);
+					}
+				}
+			}
+			function draw_stroke() {
+			    var paintobj = document.getElementById('myCanvas2').getContext('2d');
+				for (var i=0;i<6;i++){
+				  for (var j=0;j<6;j++){
+					paintobj.strokeStyle = 'rgb(0,' + Math.floor(255-42.5*i) + ',' + 
+									 Math.floor(255-42.5*j) + ')';
+					paintobj.beginPath();
+					paintobj.arc(12.5+j*25,12.5+i*25,10,0,Math.PI*2,true);
+					paintobj.stroke();
+				  }
+				}
+			}	
+			draw_fill();
+			draw_stroke();
+		</script>
+	</body>
+</html>

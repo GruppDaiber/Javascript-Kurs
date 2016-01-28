@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+		<title>Canvaskunst</title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="840" height="540">
+			Ihr Browser ist veraltet! 
+		</canvas>
+		<script type="text/javascript">
+			/*________Globale Variablen___________*/
+			var infoPic = document.getElementById('myCanvas').getContext('2d');
+			var x,y,z,u,v,w;			
+			var k_pos_default=50;
+			var k_radius_default=1;	
+			/*________Funktionen__________________*/
+			function schwarzer_kreis(xx,yy,rr){
+				infoPic.fillStyle = "#000000";
+				infoPic.beginPath();
+				infoPic.arc(xx, yy, rr, 0, 2 * Math.PI, true);
+				infoPic.fill();
+			}
+			function weisser_hintergrund(){
+				/* Weisses Rechteck zeichnen*/
+				infoPic.fillStyle = "#FFFFFF";
+			    infoPic.fillRect(20,20,800,500); 
+				/* Rechteck zeichnen*/
+				infoPic.rect(20,20,800,500); 
+				infoPic.stroke();
+			}
+			function legende(){
+				infoPic.fillStyle = "#888888";
+				infoPic.font = "bold 72px Arial,sans-serif";
+				infoPic.fillText("Gestaltung ist cool!", 100, 450);	
+			}
+			
+			function paint_jahreszeiten(){
+				weisser_hintergrund();
+				//Schwarze Kreise zeichnen
+				for (i=0; i<20; i++) {
+					x = Math.random(1);
+					y = Math.random(1);
+					z = Math.random(1);
+					u = Math.random(1)*600;
+					v = Math.random(1)*400;
+					w = Math.random(1)*50;
+					schwarzer_kreis(x*k_pos_default+u,
+									y*k_pos_default+v,
+									z*k_radius_default+w);
+				}
+				legende();
+			}
+			//weisser_hintergrund();
+			//schwarzer_kreis(200,200,20);
+			//legende();
+			paint_jahreszeiten();
+			setInterval(paint_jahreszeiten, 1000);
+		</script
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+		<title>Canvaskunst</title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="840" height="540">
+			Ihr Browser ist veraltet! 
+		</canvas>
+		<script type="text/javascript">
+
+			var infoPic = document.getElementById('myCanvas').getContext('2d');
+			function schwarzer_kreis(x,y,r){
+				infoPic.fillStyle = "#000000";
+				infoPic.beginPath();
+				infoPic.arc(x, y, r, 0, 2 * Math.PI, true);
+				infoPic.fill();
+			}
+
+			/*______________________________Rahmen____________*/
+			/* Rechteck zeichnen*/
+			infoPic.rect(20,20,800,500); 
+			infoPic.stroke();
+			/*______________________________Sommerkreise______*/
+			schwarzer_kreis(160,160,70);
+			schwarzer_kreis(470,260,40);
+			schwarzer_kreis(270,460,20);
+			schwarzer_kreis(567,233,60);
+			schwarzer_kreis(666,133,80);
+			schwarzer_kreis(368,234,100);
+			schwarzer_kreis(368,234,100);
+			schwarzer_kreis(188,360,55);
+			/*______________________________Text____________*/
+			infoPic.fillStyle = "#888888";
+			infoPic.font = "bold 72px Arial,sans-serif";
+			infoPic.fillText  ("Gestaltung ist cool!", 100, 450);			
+		</script>
+	</body>
+</html>

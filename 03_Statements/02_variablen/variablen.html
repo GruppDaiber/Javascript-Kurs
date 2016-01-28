@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head> 
+	  <meta charset="utf-8"> 
+	  <title>Variablen</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/zentrale.css" rel="stylesheet" media="all">
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv-printshiv.js" media="all">
+			</script>
+		<![endif]--> 
+		<meta name="description" content="Javaskript-Kurs"> 
+	</head>
+	<body>
+		<header role="banner">
+			<h1>
+				<abbr title="HyperText Markup Language 5">Javaskript:</abbr> 
+				<small>Variablen</small>
+			</h1>
+		</header>		
+		<div class="wrap">	
+			<main role="main">
+				<section>
+					<h2>Deklaration und Initialisierung</h2>
+					<p>
+						Javaskript-Variablen sind Container, um Daten oder Werte im Speicher
+						des Programm (Computer) zur Verfügung zu halten. 
+					</p>
+					<p>
+						Variablen können zur Programmlaufzeit beliebig oft beschrieben
+						oder ausgelesen werden.
+					</p>					
+					<p>
+						Variablen werden mit dem Schlüsselwort <strong>var</strong> deklariert
+						(=im Programm angemeldet). Eine Initialisierung findet statt, wenn
+						die deklariere Variable zum ersten mal mit einem Wert beschrieben wird.
+					</p>
+					<p>
+						Die "praktische" Initialisierung erfolgt über den
+						<strong>Zuweisungsoperator "="</strong> von rechts
+						nach links in der Programmierzeile.
+					</p>
+					<pre class="sourcecode">
+						<code> 				
+&lt;p&gt;Ergebnis: &lt;span id="ausgabe">&lt;/span>&lt;/p&gt;
+&lt;script&gt;
+var x;         // Deklaration 
+			   // der Variablen x
+x = 42;        // Initialisierung 
+			   // der Variablen x
+var y = 13;    // Gleichzeitige 
+			   // Initialisierung und 
+			   // Deklaration
+			   // der Variablen y
+var z = x + y; // Gleichzeitige 
+			   // Initialisierung und 
+			   // Deklaration
+			   // der Variablen z über 
+			   // eine Addition der Inhalte 
+			   // von x und y  
+document.getElementById('ausgabe').innerHTML = z;
+&lt;/script&gt;	
+						</code>
+					</pre>				
+					<hr />
+				</section>
+				<section>
+				    <h2>Regeln im Umgang mit Variablen</h2>
+					<ul>
+						<li>Die Variablennamen müssen einzigartig benannt werden!</li>
+						<li>Die Variablennamen heissen im Englischen Identifiers.</li>
+						<li>Die Variablennamen sollten nach ihrer Tätigkeit beschreibend
+						    benannt werden. Der Quellcode wird dadurch erheblich verständlicher.
+						</li>
+						<li>Die Variablennamen müssen folgendermaßen benannt werden:
+							<ul>
+								<li>Sie dürfen enthalten: Buchstaben, Ziffern, Unterlinie, Dollarzeichen</li>
+								<li>Der Variablenname muss mit einem Buchstaben beginnen.</li>
+								<li>Variablennamen dürfen auch mit $ oder _ beginnen.</li>
+								<li>Variablennamen unterscheiden sich durch die 
+								    Groß-/Kleinschreibung (Case-Sensitiv): Otto, oTTo ... sind
+								    verschiedene Variablen!
+								</li>
+								<li>Schlüsselwörter dürfen als Namen für Variablen nicht
+								    verwendet werden!
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<pre class="sourcecode">
+						<code>
+/* Folgende Variablen werden 
+   nur deklariert. D.h., die
+   Inhalte der Variablen sind
+   noch undefiniert!
+*/   
+var x;             /* */
+var x_koordinate;  /* */
+var wurzel;        /* */
+var __Erdumfang;   /* */
+var $_Patte;       /* */
+var wurzel_2;      /* */
+						</code>
+					</pre>
+					<hr />
+				</section>
+				<section>
+				    <h2>Deklaration/Initialisierung mehrerer Var. in einem Rutsch</h2>
+					Mehrere Variablen können auch in einer Zeile auf folgende Weise
+					deklariert und initialisiert werden.
+					<pre class="sourcecode">
+						<code> 
+var person = "John Doe", carName = "Volvo", price = 200;
+// oder:
+var person = "John Doe", 
+carName = "Volvo", 
+price = 200;
+
+// entspricht:
+
+var person = "John Doe";
+var carName = "Volvo";
+var price = 200;						
+						</code>
+					</pre>
+					<hr />
+				</section>
+				<section>
+				    <h2>Strings und Numbers (=Zahlen)</h2>
+					Variablen können mit "Sätzen aus Buchstaben/Ziffern" oder
+					mit Zahlen belegt werden.
+					<pre class="sourcecode">
+						<code> 
+var person = "John Doe"; // String
+var ziffer = "4711";     // String
+var coden_ist_toll = true;        // Boolean
+var nicht_coden_ist_toll = false; // Boolean
+var zahl = 42; 		// number -> Ganze Zahl (Integer)
+var bruch = 3.14;  	/* number -> Fließkommazahl, oder Dezimalbruch(Float)*/  				
+						</code>
+					</pre>
+					<hr />
+				</section>
+				<section>
+				    <h2>Arithmetik mit Variablen</h2>
+					Mit Variableninhalten kann gerechnet werden. Da in
+					Javaskript die Typisierung der Variablen fehlt, müssen
+					Sie auf die Variableninhalte achten! Vermeiden Sie unbedingt,
+					dass eine Variable während des Programmablaufs nicht mit
+					verschiedenen Typen von Inhalten belegt wird! Das ist
+					problematisch beim Debuggen!
+					<p>Addiere "5" + 2 + 3 ergibt einen String:</p>
+					<span id="erg1"></span>
+					<script>
+					var x = "5" + 2 + 3;
+					document.getElementById("erg1").innerHTML = x;
+					</script>					
+					<pre class="sourcecode">
+						<code> 
+var x = "5" + 2 + 3;
+document.getElementById("erg1").innerHTML = x;
+						</code>
+					</pre>
+					<p>Addiere 5 + 2 + 3 ergibt eine Zahl:</p>
+					<span id="erg2"></span>
+					<script>
+					var x = 5 + 2 + 3;
+					document.getElementById("erg2").innerHTML = x;
+					</script>					
+					<pre class="sourcecode">
+						<code> 
+var x = 5 + 2 + 3;
+document.getElementById("erg2").innerHTML = x;
+						</code>
+					</pre>
+					<p>Addiere "Hans " + "gehts " + "gut!" ergibt einen String:</p>
+					<span id="erg3"></span>
+					<script>
+					var x = "Hans " + "gehts " + "gut!";
+					document.getElementById("erg3").innerHTML = x;
+					</script>					
+					<pre class="sourcecode">
+						<code> 
+var x = "Hans " + "gehts " + "gut!";
+document.getElementById("erg3").innerHTML = x;
+						</code>
+					</pre>									
+					<hr />
+				</section>
+				<section>
+				    <h2>Eingabe und Ausgabe mit Variablen</h2>
+					Variablen können beschrieben oder ausgelesen werden:
+					<pre class="sourcecode">
+						<code> 
+person = "Otto Walkes"; // Variable "person" wird beschrieben
+komiker = person; /* Variable "person" wird ausgelesen und
+                     der Wert ("Otto Walkes") in die Variable
+                     "komiker" geschrieben*/			
+						</code>
+					</pre>
+					<hr />
+				</section>				
+			</main>
+			<aside role="complementary">
+				<section>
+					<ul>
+						<li><strong>Deklaration</strong></li>
+						<li><strong>Initialisierung</strong></li>
+						<li><strong>Variablennamen</strong></li>
+						<li><strong>Kurzschreibweise für Init. u. Dekl.</strong></li>
+						<li><strong>Variablentypen</strong>: number (Integer, Float), string, boolean</li>
+						<li><strong>Variablen sind nicht typisiert!</strong> Wenn man nicht
+							aufpasst, dann kommen teilweise unplausible und/oder fehlerhafte Ergebnisse
+							heraus!
+						</li>
+						<li><strong>Variablen</strong> können beschrieben und 
+						    ausgelesen werden.
+						</li>
+					</ul>
+				</section>
+				<section>
+				</section>
+			</aside>
+		</div>
+		<footer role="contentinfo">
+			<small>Copyright &copy; GME1501-S: <time datetime="2016">10.01.2016</time></small>
+		</footer>
+	</body>
+</html>
+

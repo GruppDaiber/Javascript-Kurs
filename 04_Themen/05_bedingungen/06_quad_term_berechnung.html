@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>if, if-else</title>
+	</head>	
+	<body>
+		<h2>Berechnung einer beliebigen Quadratischen Gleichung 0=ax^2+bx+c</h2>
+		<p id="demo"></p>
+		<script type="text/javascript">
+			function quad_anzahl_loes(a,b,c) {
+				var diskriminante = (b*b)-(4*a*c);
+				// Normieren der Diskriminante auf +-1, wenn nicht 0. 
+				// Das hat den Vorteil, dass eine Division durch 0
+				// vermieden wird und andererseits liegt eine allgemeine
+				// Ausgabe -1, 0 und 1 vor.
+				if (diskriminante != 0) {
+					// Beispiel -1 = -8/|-8| = -8/8; Math.abs(z) = |z|					
+					diskriminante = diskriminante/Math.abs(diskriminante); 
+					// normierte diskriminante = -1: keine Lösung
+					// normierte diskriminante = 0: eine Lösung
+					// normierte diskriminante = 1: zwei Lösungen
+				}
+				return diskriminante; 
+			};
+			function berechne_quad_term (a,b,c){
+				var loesungen = new Array("","","");
+				var symmetrie_wert = -1*(b)/2*a;
+				var wurzel_bruch = Math.sqrt((b*b)-(4*a*c))/2*a;
+				switch (quad_anzahl_loes(a,b,c)) {
+				  case 0: //Eine Lösung
+				    loesungen[0]="Eine Lösung: ";
+				    loesungen[1]=symmetrie_wert;
+					loesungen[2]="";
+					break;
+				  case -1: //Keine Lösung
+				    loesungen[0]="Keine Lösung";
+					loesungen[1]="";
+					loesungen[2]="";
+					break;
+				  case 1: //Zwei Lösungen
+				    loesungen[0]="Zwei Lösungen: ";
+					loesungen[1]=symmetrie_wert+wurzel_bruch;
+					loesungen[2]=symmetrie_wert-wurzel_bruch;				  
+					break;
+				  default:
+					loesungen[0]="Quadratischer Term";
+					loesungen[1]="default";
+					loesungen[2]="default";
+					break;
+				}
+				return loesungen;
+			};
+			document.getElementById("demo").innerHTML =berechne_quad_term(-1,2,1); 
+		</script>
+	</body>
+</html>

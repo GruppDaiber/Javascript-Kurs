@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>if, if-else</title>
+		<script>
+			function Check() {
+			  var Eingabe=document.Formular.Eingabe.value;
+			  var nur_das = "0123456789[]()-+*%/.";
+			  var ok=true;
+			  for (var i = 0; i < Eingabe.length; i++){
+				if (nur_das.indexOf(Eingabe.charAt(i)) < 0){
+					//Eingabe.charAt(i) ergibt das i.te Zeichen der Eingabe
+					//nur_das.indexOf(Eingabe.charAt(i) vergleicht das i.te
+					//Zeichen der Eingabe mit dem String der Variablen nur_das.
+					//Ist das Zeichen vorhanden, dann gibt "nur_das.indexOf()" die
+					//Position im String von nur_das an.					
+					ok=false;						
+					break; // Erstes erkanntes Zeichen nicht ok, 
+					       // dann if verlassen... 
+				};				
+			  };
+			  // Ausgabe
+			  i--; //Schleifenzähler um 1 zurück korrigieren
+			  document.getElementById("Ausgabe_1").innerHTML=nur_das;
+			  document.getElementById("Ausgabe_2").innerHTML=
+								nur_das.indexOf(Eingabe.charAt(i));
+			  document.getElementById("Ausgabe_5").innerHTML=i;
+			  document.getElementById("Ausgabe_3").innerHTML=
+														Eingabe.charAt(i);		
+			  if (ok){
+					document.getElementById("Ausgabe_4").innerHTML = "OK! Erlaubt!";
+				}else{
+					document.getElementById("Ausgabe_4").innerHTML = "Zeichen nicht erlaubt!";
+			  };
+				
+			};			
+		</script>		
+	</head>	
+	<body>
+		<h2>Überprüfung einer Eingabe auf erlaubte Zeichen</h2>
+		<form name="Formular" action="">
+			<p>
+				Eingabe: 
+				<input type="text" name="Eingabe" size="3">
+			</p>
+		</form>
+		<button onclick="Check()">Zeichen erlaubt?</button>
+		<p>Erlaubte Zeichen: <span id="Ausgabe_1"></span></p>
+		<p>Eingabe.charAt(i): <span id="Ausgabe_3"></span></p>
+		<p>nur_das.indexOf(Eingabe.charAt(i)):<br />
+ 		   Wenn Zeichen nicht in der Zeichenkette, dann Ausgabe "-1", sonst "0,1,2 ...":
+		   <span id="Ausgabe_2"></span></p>
+		<p><span id="Ausgabe_4"></span></p>
+		<p>Schleifenzähler: <span id="Ausgabe_5"></span></p>
+	</body>
+</html>

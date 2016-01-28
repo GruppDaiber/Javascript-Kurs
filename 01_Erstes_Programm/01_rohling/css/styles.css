@@ -1,0 +1,102 @@
+/* ---------------------------------------------------------
+   HTML5 Bones
+   This stylesheet contains print styling and a section for 
+   you to simply add your own. This is a basic template 
+   after all.
+   ---------------------------------------------------------*/
+	html {
+		font-size:100%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	*, *:before, *:after {
+		-webkit-box-sizing: inherit;
+		-moz-box-sizing: inherit;
+		box-sizing: inherit;
+	}
+	
+	body {
+	}
+	/* Styling der Links*/
+	a:link { color:#0271fb; }
+	a:visited { color:#bd02fb; }
+	a:hover, a:focus { color:#000; }
+	a:active { color:#fb0e02; }
+	
+	
+	
+/* ---------------------------------------------------------
+   Meine eigenes Syling
+   ---------------------------------------------------------*/
+  html { background: #f2f2f2; }
+  body {
+	font-family: Verdana, Arial, sans-serif;
+	margin: 0 auto;           /*Mittig positionieren*/
+	font-size:0.875rem;
+	line-height: 1.571428571; /*Durchschuss: 22px/14px*/
+		
+    background: white;
+    width: 90%;
+    max-width: 1920px;
+    min-width: 320px;
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+  body > header {
+    padding-bottom: 1rem;
+    border-bottom: 3px double #ccc;
+    margin-bottom: 2rem;
+  }
+  div.wrap {
+    display: table; /* Floats umschließen */
+    margin-bottom: 1rem;
+  } 
+  body > header h1 { margin: 0; font-size: 2.0rem;}
+  body > header p { margin: 0; }
+
+  abbr[title] { text-decoration: none; border-bottom: none; } 
+  abbr[title]:hover { border-bottom: 1px dotted #08c; }
+  
+  /* Breite < 80% */
+  main[role="main"] {
+    float: left;
+    max-width: 1248px;   /*65% von 1920px*/
+    min-width: 208px;	 /*65% von 320px*/
+    width: 65%; 	
+  }
+  main h2 { margin-top: 0; font-size: 1,2857142857142857142857142857143rem}
+  /* Ausblenden, da auf Desktop-Bildschirmen ueberfluessig */ 
+  main nav {
+    position: absolute;
+    top: -32768px;
+    left: -32768px;
+  }
+  aside[role="complementary"] {
+    float: right;
+    max-width: 576px;   /*30% von 1920px*/
+    min-width: 106px;	/*30% von 320px*/
+    width: 30%;	
+    background: #eee;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  body > footer {
+    clear: both;
+    color: #aaa;
+    padding: 1rem;
+    border-top: 1px solid #ccc;
+  }
+  /*__________________Quellcode anzeigen________*/
+  /* Quelle: http://www.guntherkrauss.de/computer/web/quelltext.html*/
+  pre.sourcecode code:before {
+	  content: attr(title)'  ';
+	  padding: 0;
+	  margin: 0 .5rem 0 auto;
+	  font-weight: bold;
+	  color: #999;
+  }
+  pre.sourcecode:hover code:before {
+		content: '\20\20\20';
+  }

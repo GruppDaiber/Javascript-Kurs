@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head> 
+	  <meta charset="utf-8"> 
+	  <title>Operatoren</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/zentrale.css" rel="stylesheet" media="all">
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv-printshiv.js" media="all">
+			</script>
+		<![endif]--> 
+		<meta name="description" content="Javaskript-Kurs"> 
+	</head>
+	<body>
+		<header role="banner">
+			<h1>
+				<abbr title="HyperText Markup Language 5">Javaskript:</abbr> 
+				<small>Operatoren</small>
+			</h1>
+		</header>		
+		<div class="wrap">	
+			<main role="main">
+			<section>
+					<h2>Zuweisungsoperator</h2>
+						Sie können zum Beispiel einer Variablen einen Wert 
+						zuweisen. Der Zuweisungsoperator dafür ist ein 
+						Istgleichzeichen.
+					<pre class="sourcecode">
+						<code> 				
+var zahl; // Initialisierung der Variablen zahl
+zahl = 2; // Die Zahl 2 wird der Variablen zahl zugewiesen 
+						</code>				
+					</pre>
+
+					<hr />
+				</section>			
+				<section>
+					<h2>Operatoren zum Rechnen</h2>
+					<p>
+						Mathematische Operatoren notieren Sie mit den dafür üblichen 
+						Zeichen. Mit + notieren Sie eine Addition, mit - eine Subtraktion, 
+						mit * eine Multiplikation, mit / eine Division. 
+					</p>
+				    <p>
+						Eine Besonderheit stellt der <strong>Operator %</strong> dar. 
+						Damit wird eine so genannte Modulo-Division durchgeführt. 
+						Bei einer <strong>Modulo-Division</strong> werden zwei Werte dividiert. 
+						Das Ergebnis ist jedoch im Gegensatz zur normalen Division nur 
+						der Restwert der Division. 
+					</p>
+				    <p>	
+						Wenn Sie z.B. 13 % 5 notieren, 
+						erhalten Sie als Ergebnis 3, weil 13 geteilt durch 5 gleich 2 Rest 3 
+						ergibt. Diese 3 ist es, die als Ergebnis einer Modulo-Division 
+						herauskommt.
+					</p>
+					<p>
+						Sie können mehrere Operationen in Reihe notieren. Dabei gilt 
+						die übliche "Punkt-vor-Strich-Regel". Wenn Sie eine andere 
+						Regel erzwingen wollen, müssen Sie Klammern verwenden
+					</p>
+					<table>
+						<tr>
+							<th>Operator&#160;&#160;&#160;&#160;</th>
+							<th>Beschreibung</th>
+						</tr>
+						<tr>
+							<td>+</td>
+							<td>Addition</td>
+						</tr>
+						<tr>
+							<td>-</td>
+							<td>Subtraction</td>
+						</tr>
+						<tr>
+							<td>*</td>
+							<td>Multiplication</td>
+						</tr>
+						<tr>
+							<td>/</td>
+							<td>Division</td>
+						</tr>
+						<tr>
+							<td>%</td>
+							<td>Modulo</td>
+						</tr>
+						<tr>
+							<td>++</td>
+							<td>Increment: Hochzählen</td>
+						</tr>
+						<tr>
+							<td>--</td>
+							<td>Decrement: Runterzählen</td>
+						</tr>
+					</table>
+					<hr />
+				</section>
+				<section>
+				    <h2>Besondere Notationen</h2>
+					<p>
+					Die besonderen Notationen, die in den obigen Beispielen vorkommen, 
+					können Sie verwenden, wenn Sie Additionen oder Subtraktionen 
+					abkürzen wollen:
+					<ul>
+						<li><strong>Zahl += 3</strong>; ist eine Abkürzung für Zahl = Zahl + 3;
+						    <strong>Der Inhalt der Variablen Zahl wir um 3 erhöht.</strong>
+						</li>
+						<li><strong>Zahl++;</strong> ist eine Abkürzung für Zahl = Zahl + 1;</li>
+						    <strong>Der Inhalt der Variablen Zahl wir um 1 erhöht.</strong>
+						<li><strong>Zahl -= 2;</strong> ist eine Abkürzung für Zahl = Zahl - 2;</li>
+						    <strong>Der Inhalt der Variablen Zahl wir um 2 erniedrigt.</strong>
+						<li><strong>Zahl--;</strong> ist eine Abkürzung für Zahl = Zahl - 1;
+						    <strong>Der Inhalt der Variablen Zahl wir um 1 erniedrigt.</strong>
+						</li>  
+					</ul>
+					</p>
+					<table>
+						<tr>
+							<th>Operator&#160;&#160;&#160;</th>
+							<th>Beispiel&#160;&#160;&#160;</th>
+							<th>Entspricht</th>
+						</tr>
+						<tr>
+							<td>=</td>
+							<td>x = y</td>
+							<td>x = y</td>
+						</tr>
+						<tr>
+							<td>+=</td>
+							<td>x += y</td>
+							<td>x = x + y</td>
+						</tr>
+						<tr>
+							<td>-=</td>
+							<td>x -= y</td>
+							<td>x = x - y</td>
+						</tr>
+						<tr>
+							<td>*=</td>
+							<td>x *= y</td>
+							<td>x = x * y</td>
+						</tr>
+						<tr>
+							<td>/=</td>
+							<td>x /= y</td>
+							<td>x = x / y</td>
+						</tr>
+						<tr>
+							<td>%=</td>
+							<td>x %= y</td>
+							<td>x = x % y</td>
+						</tr>
+					</table>	
+					<hr />
+				</section>
+				<section>
+				    <h2>Vergleichs- und Logikoperatoren</h2>
+					<table>
+						<tr>
+							<th>Operator&#160;&#160;&#160;&#160;</th>
+							<th>Beschreibung&#160;&#160;&#160;&#160;</th>
+							<th>Beispiel</th>
+						</tr>
+						<tr>
+							<td>==</td>
+							<td>gleich</td>
+							<td>true==true (true)</td>
+						</tr>
+						<tr>
+							<td>===</td>
+							<td>Strikte Gleichheit</td>
+							<td>1===true (false)</td>
+						</tr>
+						<tr>
+							<td>!=</td>
+							<td>Nicht gleich</td>
+							<td>5!=3 (true)</td>
+						</tr>
+						<tr>
+							<td>!==</td>
+							<td>Striktes nicht gleich</td>
+							<td>true!=false (true)</td>
+						</tr>
+						<tr>
+							<td>&gt;</td>
+							<td>größer als</td>
+							<td>5&gt;3 (true)</td>
+						</tr>
+						<tr>
+							<td>&lt;</td>
+							<td>kleiner als</td>
+							<td>5&lt;3 (false)</td>
+						</tr>
+						<tr>
+							<td>&gt;=</td>
+							<td>Größer gleich</td>
+							<td>5&gt;=5 (true)</td>
+						</tr>
+						<tr>
+							<td>&lt;=</td>
+							<td>Kleiner gleich</td>
+							<td>42&lt;=42 (true)</td>
+						</tr>
+						<tr>
+							<td>?</td>
+							<td>Bedingter (ternärer) Operator</td>
+							<td>var unizahl = Math.PI > 42 ? "Ja" : "Nein"; ("Nein")</td>
+						</tr>
+					</table>
+					<hr />
+				</section>
+				<section>
+				    <h2>Bit-Operatoren</h2>
+					Bit-Operatoren sind nur etwas für Profis. 
+					Um Bit-Operatoren richtig einzusetzen, müssen Sie 
+					viel von computer-internen Speichervorgängen verstehen. 
+					Deshalb werden die Bit-Operatoren hier nur kurz erwähnt.
+					<ul>
+						<li><strong>>></strong> verschiebt Bits nach rechts</li>
+					    <li><strong><<</strong> verschiebt Bits nach links</li>
+						<li><strong>&</strong> definiert in einer Bitmaske eine Und-Bedingung</li>
+						<li><strong>|</strong> definiert in einer Bitmaske eine inklusive Oder-Bedingung</li>
+						<li><strong>^</strong> definiert in einer Bitmaske eine exklusive Oder-Bedingung</li>
+						<li><strong>~</strong> Bitweise Nicht-Operator, tauscht alle Nullen in Einsen und umgekehrt</li>
+					</ul>
+					<hr />
+				</section>
+				<section>
+				    <h2>Zeichenkettenverknüpfung</h2>
+					Mit einem einfachen Pluszeichen + können Sie eine 
+					Zeichenkette an eine andere anhängen.
+					<pre class="sourcecode">
+						<code> 				
+var Vorname = "Jörg ";
+var Zuname = "Niebel";
+var Name = Vorname + Zuname + ", der Autor dieses Dokuments";
+&lt;script&gt;document.getElementById("ergebnis").innerHTML = Name;&lt;/script&gt;							</code>				
+					</pre>					
+					Ergibt den Satz: <span id="ergebnis"></span>
+					<script>
+						var Vorname = "Jörg ";
+						var Zuname = "Niebel";
+						var Name = Vorname + Zuname + ", der Autor dieses Dokuments";
+						document.getElementById("ergebnis").innerHTML = Name;
+					</script>
+					<hr />
+				</section>
+				<section>
+				    <h2>Operator zur Typenbestimmung</h2>
+					Methoden  vordefinierter Objekte sind an feste Variablentypen 
+					gebunden. Bevor Sie diese verwenden können, sollten Sie im 
+					Zweifelsfall den Typ der Variable prüfen. Mit dem Operator 
+					typeof steht Ihnen ein Werkzeug zur Typenüberprüfung zur 
+					Verfügung.
+					<p>
+						Der Operator typeof wertet den nachfolgenden Operanden 
+						hinsichtlich seines Typs aus. Der Rückgabewert dieses 
+						Operators ist ein String, den Sie abfragen können. 
+						Mögliche Rückgabewerte sind:
+					</p>
+					<ul>
+						<li><strong>boolean</strong> (Ja/Nein-Variable),
+						<li><strong>string</strong> (Zeichenkettenvariable),</li>
+						<li><strong>number</strong> (numerische Variable),</li>
+						<li><strong>function</strong> (Funktion),</li>
+						<li><strong>object</strong> (Objekt),</li>
+						<li><strong>undefined</strong> (unbestimmter Typ).</li>
+					</ul>
+					<p>
+						Anweisungen müssen in Klammern eingeschlossen werden, 
+						z.B. <strong>typeof(Zahl=Zahl+2).</strong>
+					</p>
+					<pre class="sourcecode">
+						<code> 				
+var Ziffern = "2505";
+document.getElementById("erg2").innerHTML = typeof(Ziffern);		
+						</code>				
+					</pre>					
+					Ergibt: <span id="erg2"></span>
+					<script>
+						var Ziffern = "2505";
+						document.getElementById("erg2").innerHTML = typeof(Ziffern);
+					</script>
+					<hr />
+				</section>
+				<section>
+				    <h2>Void-Operator</h2>
+					Der Operator void wird dann verwendet, wenn eine Anweisung 
+					ausgeführt werden soll, aber keine Rückgabewerte erzeugt 
+					werden dürfen. 
+					<p>
+						Der Operator void führt die nach ihm notierte 
+						Anweisung aus. Der Operator ersetzt dabei die 
+						Rückgabewerte der Anweisung stets durch undefined. 
+						Sie können auch eine Anweisung wie z.B. 
+						Zahl=Zahl+2 als Operand angeben. 
+						In diesem Fall schließen Sie die Anweisung 
+						in Klammern ein, also void(Zahl=Zahl+2).
+					</p>
+					<pre class="sourcecode">
+						<code> 				
+var Zifferzahl = "2505";
+document.getElementById("erg3").innerHTML = void(Zifferzahl);		
+						</code>				
+					</pre>					
+					Ergibt: <span id="erg3"></span>
+					<script>
+						var Zifferzahl = "2505";
+						document.getElementById("erg3").innerHTML = void(Zifferzahl);
+					</script>
+					<hr />
+				</section>
+				<section>
+				    <h2>Operator zum Löschen von Objekten</h2>
+					Nicht mehr benötigte Objekte bzw. Objekteigenschaften 
+					werden mit dem Operator delete gelöscht. Sie können 
+					jedoch keine vordefinierten Objekte und Objekteigenschaften 
+					löschen. Der Operator gibt im Erfolgsfall den Wert 
+					true und bei Misserfolg den Wert false zurück. 
+					<p>
+						Im Beispiel wird der Variablen SinnDesLebens der 
+						Wert 42 zugewiesen. Anschließend wird diese Variable 
+						mit delete wieder gelöscht. Mit Hilfe des Operators 
+						typeof wird überprüft, ob das Löschen der Variablen 
+						erfolgreich ist.
+					</p>
+					<pre class="sourcecode">
+						<code> 				
+var SinnDesLebens = 42;
+document.getElementById("erg5").innerHTML = delete SinnDesLebens;	
+document.getElementById("erg4").innerHTML = (typeof(SinnDesLebens));
+						</code>				
+					</pre>					
+					Löschen: <span id="erg5"></span>, 
+					weil eine Zahl kein Objekt ist.<br />
+					Ergibt: <span id="erg4"></span>
+					<script>
+						var SinnDesLebens = 42;
+						//delete SinnDesLebens;
+						document.getElementById("erg5").innerHTML = delete SinnDesLebens;
+						document.getElementById("erg4").innerHTML = (typeof(SinnDesLebens));
+					</script>
+					<hr />
+				</section>				
+			</main>
+			<aside role="complementary">
+				<section>
+					<ul>
+						<li><strong>Zuweisungsoperator</strong></li>
+						<li><strong>Rechenoperatoren</strong></li>
+						<li><strong>Besondere Notationen</strong></li>
+						<li><strong>Vergleichs- und Logikoperatoren</strong></li>
+						<li><strong>Bit-Operatoren</strong></li>
+						<li><strong>Zeichenkettenverknüpfung</strong></li>
+						<li><strong>Operator zur Typenbestimmung</strong></li>
+						<li><strong>Operator zum Löschen von Objekten</strong></li>
+					</ul>
+				</section>
+				<section>
+				</section>
+			</aside>
+		</div>
+		<footer role="contentinfo">
+			<small>Copyright &copy; GME1501-S: <time datetime="2016">10.01.2016</time></small>
+		</footer>
+	</body>
+</html>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+		<title>Canvaskunst</title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="300" height="500">
+			Ihr Browser ist veraltet! 
+		</canvas>
+		<script type="text/javascript">
+			var infoPic = document.getElementById('myCanvas').getContext('2d');
+			/* Rechteck zeichnen*/
+			infoPic.fillStyle = "#AAAAFF";
+			infoPic.fillRect(0, 0, 140, 360); 
+			
+			infoPic.fillStyle = "#FF8800";
+			infoPic.fillRect(20, 130, 100, 200);
+			
+			/* gefüllter Kreis zeichnen*/
+			infoPic.fillStyle = "#880088";
+			infoPic.beginPath();
+			infoPic.arc(70, 70, 50, 0, 2 * Math.PI, true);
+			infoPic.fill();
+
+			/* Text zeichnen*/
+			infoPic.fillStyle = "#880088";
+			infoPic.font = "bold 14px Arial,sans-serif";
+			infoPic.fillText  ("NFORMATION", 22, 325);
+			
+			/* Kreispfad ohne Füllung zeichnen"*/
+			infoPic.beginPath();
+			infoPic.arc(70, 70, 50, 0, 2 * Math.PI, true);
+			infoPic.stroke();				
+		</script>
+	</body>
+</html>

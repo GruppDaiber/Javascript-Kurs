@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>if, if-else</title>
+	</head>	
+	<body>
+		<h2>Anzahl Lös.-Checker!</h2>
+		<p id="demo"></p>
+		<script>
+			function quad_anzahl_loes(a,b,c) {
+				var diskriminante = (b*b)-(4*a*c);
+				//Normieren auf +-1, wenn nicht 0
+				if (diskriminante != 0) {
+					// Beispiel -1= -8/8;
+					diskriminante = diskriminante/Math.abs(diskriminante); 
+				}
+				//-1: keine Lösung
+				// 0: eine Lösung
+				// 1: zwei Lösungen
+				return diskriminante; 
+			}	
+			document.getElementById("demo").innerHTML =quad_anzahl_loes(1,2,1); 
+		</script>
+	</body>
+</html>

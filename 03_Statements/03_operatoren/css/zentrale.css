@@ -1,0 +1,15 @@
+/* =======================================================
+Zentrales Stylesheet – wird im <head> der Webseiten eingebunden
+Datei: zentrale.css
+Datum: ...
+Autor: ...
+========================================================== */
+
+@import url(normalize.css); 
+@import url(styles.css);
+
+/* Hier werden später weitere Stylesheets eingebunden */ 
+
+/* ======================================
+   E N D E zentrale.css
+====================================== */

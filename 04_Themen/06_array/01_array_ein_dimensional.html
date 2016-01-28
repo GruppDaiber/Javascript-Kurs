@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Eindimensionaler Array</title>
+	</head>
+	<body>
+		<h2>Array: Viele Zahlen in einem eindimensionalen Array</h2>
+		<ul>
+			<li>Der Array ist nicht nur in Javaskript ein Objekt mit 
+				Eigenschaften und Methoden.
+			</li>
+			<li>Der Array sammelt beliebig viele Elemente unter einem 
+				Namen zusammen.
+			</li>		
+			<li>Die einzelnen Element werden über Indizes angesprochen, um
+				ausgelesen oder beschrieben werden zu können.
+			</li>
+			<li>Die Element können Zahlen, Strings, boolsche Werte oder Objekte
+				aufnehmen.
+			</li>
+		</ul>
+		<p>(0) Ein leerer Array wird zum Beispiel so angelegt (=Deklaration): 
+		    <br /><strong>var zahlen_x = new Array();</strong>
+		</p>
+		<p>(1) Der Array bekommt zwei zufällige Zahlen (Das sind Elemente des Arrays): 
+		   <span id="Ausgabe_1"></span><br />
+		   <strong>zahlen_x[0]=Math.floor(Math.random()*100); //erstes Element</strong><br />
+		   <strong>zahlen_x[1]=Math.floor(Math.random()*100); //zweites Element</strong><br />
+		</p>
+		<p>	
+			Alternativ zu (0) und (1):<br />
+		   <strong>var zahlen_x = new Array(Math.floor(Math.random()*100), Math.floor(Math.random()*100));</strong>
+		</p>
+		<p>(2) Dem Array lassen sich automatisch über eine Schleife weitere
+		   Elemente anhängen: 
+		   <br />
+		   <strong>for(i=2;i<20;i++){</strong><br />
+		   <strong>    zahlen_x[zahlen_x.length]=Math.floor(Math.random()*100);</strong><br />
+		   <strong>}</strong><br />
+		   <span id="Ausgabe_2"></span>
+		</p>
+		<p>(3) Ein beliebiges Element (z.B. das 4. Element) lässt sich über den 
+			Index auslesen: <span id="Ausgabe_3"></span><br />
+			<strong>document.getElementById("Ausgabe_3").innerHTML = zahlen_x[4];</strong><br />
+		</p>
+		<p>(4) Ein beliebiges Element (z.B. das 4. Element) lässt sich auch neu 
+		   beschreiben:<br /> 
+		   <strong>zahlen_x[4]="Polierte Platte mit 4711";</strong><br />
+		   <strong>document.getElementById("Ausgabe_4").innerHTML =zahlen_x;</strong><br />
+		   <span id="Ausgabe_4"></span><br />
+		</p>
+		<script type="text/javascript">
+			var zahlen_x = new Array(); //Leeren Array anlegen
+			//(1) Array mit zufälligen Zahlen füllen
+			zahlen_x[0]=Math.floor(Math.random()*100); //erstes Element
+			zahlen_x[1]=Math.floor(Math.random()*100); //zweites Element
+			document.getElementById("Ausgabe_1").innerHTML = zahlen_x;
+			//(2) Automatisches Anhängen weiterer Elemente:
+			for(i=2;i<20;i++){
+				zahlen_x[zahlen_x.length]=Math.floor(Math.random()*100);
+			};
+			document.getElementById("Ausgabe_2").innerHTML = zahlen_x;
+			//(3) Auslesen eines beliebigen Elements:
+			document.getElementById("Ausgabe_3").innerHTML = zahlen_x[4];
+			//(4) Beschreiben eines beliebigen Elements:
+			zahlen_x[4]="Polierte Platte mit 4711";
+			document.getElementById("Ausgabe_4").innerHTML =zahlen_x;
+		</script>				
+	</body>
+</html>	
+		

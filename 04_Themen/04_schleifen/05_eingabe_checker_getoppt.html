@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>if, if-else</title>
+		<script>
+			function Check() {
+			  var Eingabe=document.Formular.Eingabe.value;
+			  var nur_das = "0123456789[]()-+*%/.";
+			  var ok=true;
+			  var ausgabe_text="Eingabe: "+ Eingabe + "<br />";
+			  var ok_array=new Array();
+			  //____________Jeden Buchstaben der Eingabe checken
+			  for (var i = 0; i < Eingabe.length; i++){
+				if (nur_das.indexOf(Eingabe.charAt(i)) < 0){
+					ok=false;
+				}else{
+					ok=true;
+				};
+				ok_array[ok_array.length]=ok; //Neues Element an Array anfügen
+			  };
+			  //___________Jeden Buchstaben der Eingabe kommentieren
+			  for (var i = 0; i < ok_array.length-1; i++){
+			    
+				if (ok_array[i]==true){
+				    ausgabe_text=ausgabe_text+(i+1)+".tes Zeichen erlaubt!<br />";
+				}else{
+				    ausgabe_text=ausgabe_text+(i+1)+".tes Zeichen nicht erlaubt!<br />";
+				};
+			  };
+			document.write(ausgabe_text);
+			};			
+		</script>		
+	</head>	
+	<body>
+		<h2>Überprüfung einer Eingabe auf erlaubte Zeichen</h2>
+		<form name="Formular" action="">
+			<p>
+				Eingabe: 
+				<input type="text" name="Eingabe" size="3">
+			</p>
+		</form>
+		<button onclick="Check()">Zeichen erlaubt?</button>
+		<p id="Ausgabe"></p>
+	</body>
+</html>

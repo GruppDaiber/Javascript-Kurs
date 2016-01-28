@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head> 
+	  <meta charset="utf-8"> 
+	  <title>Heutiges Datum</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/zentrale.css" rel="stylesheet" media="all">
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv-printshiv.js" media="all">
+			</script>
+		<![endif]--> 
+		<meta name="description" content="Javaskript-Kurs"> 
+	</head>
+	<body>
+		<header role="banner">
+			<h1>
+				<abbr title="HyperText Markup Language 5">Javaskript:</abbr> 
+				<small>Das heutige Datum mit Zeitangabe per Javaskript und einem Button </small>
+			</h1>
+		</header>		
+		<div class="wrap">	
+			<main role="main">
+				<section>
+					<h2>Der Quellcode dazu:</h2>
+					<pre class="sourcecode">
+						<code> 				
+&lt;button 
+	type="button" 
+	onclick="document.getElementById('datumsanzeige').innerHTML = Date()"&gt;
+	Welches Datum haben wir heute?
+&lt;/button&gt;
+&lt;p id="datumsanzeige">&lt;/p&gt;				
+						</code>				
+					</pre>
+					<h2>Die Erklärung dazu:</h2>
+					Auf das Buttonereignis "onclick" wird innerhalb des
+					Containertags "p" mit "innerHTML" das Datum "Date()" hineingeschrieben und angezeigt.
+					Das Containertag "p" ist über seine id "id='datumsanzeige' direkt
+					über document.getElementById('datumsanzeige') ansprechbar. Das gesamte
+					HTML-Dokument wird über document angesprochen.
+				</section>
+			</main>
+			<aside role="complementary">
+				<section>
+				    <button 
+						type="button" 
+						onclick="document.getElementById('datumsanzeige').innerHTML = Date()">
+						Welches Datum haben wir heute?
+					</button>
+					<p id="datumsanzeige"></p>
+				</section>
+			</aside>
+		</div>
+		<footer role="contentinfo">
+			<small>Copyright &copy; GME1501-S: <time datetime="2016">10.01.2016</time></small>
+		</footer>
+	</body>
+</html>
+

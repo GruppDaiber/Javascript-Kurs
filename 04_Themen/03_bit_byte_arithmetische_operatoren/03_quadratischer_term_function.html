@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Quadratischer Term</title>
+	</head>
+	<body>
+		<h2>Quadratischer Term</h2>
+		<p>Der quadratische Term für x=2 mit 1*x^2 + 1*x + 1 = 7</p>
+		<p><strong><span id="demo_1"></span></strong><p>
+		<p><strong><span id="demo_2"></span></strong><p>
+		
+		<script type="text/javascript">
+			function quad_term(a,b,c,x){
+				return a*x*x+b*x+c;
+			}
+			document.getElementById("demo_1").innerHTML = 
+			                "quad_term(1,1,1,2) ergibt " + quad_term(1,1,1,2);
+			document.getElementById("demo_2").innerHTML = 
+			                "quad_term(-1,1,-3,4) ergibt " + quad_term(-1,1,-3,4);							
+		</script>
+	</body>
+</html>	

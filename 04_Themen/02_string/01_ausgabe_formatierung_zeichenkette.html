@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+		<title>Zeichenkette-Anführungszeichen</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var Buchthema="Javaskript von 'Herrn Guggu'";
+			var AnderesBuchthema='Actionskript';
+			var text_1="Who's next?!";
+			var text_2="Zuerst ich, \ndann sie und \ndann er!"; /*Zeichenformatierung*/
+			var text_3="C:\\WINDOOFS";
+		</script>
+		<p id="Ausgabe"></p>
+		<button 
+			type="button" 
+			onclick="document.getElementById('Ausgabe').innerHTML =Buchthema+' und '+AnderesBuchthema">
+			Diese Sprachen sind cool!
+		</button>
+		<button 
+			type="button" 
+			onclick="document.getElementById('Ausgabe').innerHTML =text_1">
+			Beim Doktor ...
+		</button>
+		<button 
+			type="button" 
+			onclick="alert(text_2)">
+			Der Egoist ...
+		</button>	
+		<button 
+			type="button" 
+			onclick="document.getElementById('Ausgabe').innerHTML =text_3">
+			Wo liegt Windows?
+		</button>					
+	</body>
+</html>

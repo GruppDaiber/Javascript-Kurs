@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Bit-Operatoren</title>
+	</head>
+	<body>
+		<p>Schnelle Multiplikation 1*2: &lt;&lt; <span id="ausgabe_1"></span></p>
+		<p>Schnelle Multiplikation 1*4: &lt;&lt; <span id="ausgabe_2"></span></p>
+		<p>Schnelle Multiplikation 1*8: &lt;&lt; <span id="ausgabe_3"></span></p>
+		<p>Schnelle Division 256/2: &gt;&gt; <span id="ausgabe_4"></span></p>
+		<p>Schnelle Division 256/4: &gt;&gt; <span id="ausgabe_5"></span></p>
+		<p>Schnelle Division 256/4: &gt;&gt; <span id="ausgabe_6"></span></p>
+		<p>Bitmaske UND 1&1:                 <span id="ausgabe_7"></span></p>
+		
+		<script type="text/javascript">
+			var zahl_1;
+			var zahl_2;
+			var ergebnis;
+			/*_____________Links-Shiften: Schnelle Multiplikation_______*/
+			zahl_1=1;      //Multiplikation mit 2
+			document.getElementById("ausgabe_1").innerHTML = zahl_1 << 1;
+			
+			zahl_1=1;      //Multiplikation mit 4
+			document.getElementById("ausgabe_2").innerHTML = zahl_1 << 2;
+			
+			zahl_1=1;      //Multiplikation mit 8
+			document.getElementById("ausgabe_3").innerHTML = zahl_1 << 3;
+			
+			/*_____________Rechts-Shiften: Schnelle Division_______*/
+			zahl_1=256;      //Division durch 2
+			document.getElementById("ausgabe_4").innerHTML = zahl_1 >> 1;
+			
+			zahl_1=256;      //Division durch 4
+			document.getElementById("ausgabe_5").innerHTML = zahl_1 >> 2;
+			
+			zahl_1=256;      //Division durch 8
+			document.getElementById("ausgabe_6").innerHTML = zahl_1 >> 3;
+			
+			/*_____________Bitmasken_____________________*/
+			zahl_1=1; zahl_2=1;
+			ergebnis=zahl_1 & zahl_2; //UND-Maskierung
+			document.getElementById("ausgabe_7").innerHTML = ergebnis;
+			
+		</script>
+	</body>
+</html>	
+		

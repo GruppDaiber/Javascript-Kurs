@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Aufgabe: Eindimensionaler Array</title>
+	</head>
+	<body>
+		<h2>Aufgabe: Eindimensionalen Array mit Funktion befüllen</h2>
+
+		<p> Ein Array lässt sich auch mit einer entsprechenden Funktion, 
+			die einen Array ausgibt, befüllen:<br /> 
+			<strong>var zahlen=new Array();</strong><br />
+			<strong>//zahlen=zuffis(5,100,-50);</strong><br />	
+			<strong>zahlen=winkel_rad();</strong><br />	
+			<strong>document.getElementById("Ausgabe").innerHTML =zahlen;</strong><br />
+			<span id="Ausgabe"></span>
+		</p>
+		<script type="text/javascript">
+			function zuffis(anzahl,bereich, bereichverschiebung){
+			    //Gibt einen Array zurück mit "anzahl" Zufallszahlen
+				//im Bereich 0 bis bereich. Über die Größe und Polarität
+				// von "bereichsverschiebung" (z.B. -50) kann der Bereich
+				// verschoben werden: 0...100 -> 0-50 ... 100-50 =-50 ...50
+				var localArray=new Array();
+				for(i=0;i<anzahl;i++){
+					localArray[localArray.length]=
+						Math.floor(Math.random()*bereich)+bereichverschiebung;
+				};
+				return localArray;
+			}
+			
+			function runden(zahl,dezimalstellen){
+				//Rundet eine Zahl auf eine bestimmte Nachkommastelle
+				//Math.round(zahl*10^3/10^3)
+				return Math.round(zahl * Math.pow(10, dezimalstellen)) / Math.pow(10, dezimalstellen);
+			}
+			
+			function winkel_rad(genauigkeit){
+				var localArray=new Array();
+				for(var winkel=0;winkel<360;winkel++){
+					localArray[localArray.length]=runden(Math.PI*winkel/180,genauigkeit);
+				};
+				return localArray;
+			}
+			/*
+			var zahlen = new Array();
+			zahlen = zuffis(5,100,-50);	//Übergabe Zufallszahlen an Array "zahlen"
+			document.getElementById("Ausgabe").innerHTML = zahlen;
+			*/
+			
+			
+			
+			
+			var rw_array = new Array(); //Leeren Array anlegen
+			rw_array = winkel_rad(2);   //Index->Grad, Inhalt Element->Rad
+			document.getElementById("Ausgabe").innerHTML = rw_array;
+		</script>				
+	</body>
+</html>	
+		
